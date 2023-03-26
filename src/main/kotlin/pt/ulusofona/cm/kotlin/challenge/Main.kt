@@ -1,4 +1,4 @@
-package pt.ulusofona.cm.kotlin.challenge.models
+package pt.ulusofona.cm.kotlin.challenge
 
 //import pt.ulusofona.cm.kotlin.challenge.exceptions
 //import pt.ulusofona.cm.kotlin.challenge.interfaces
