@@ -32,15 +32,22 @@ fun main() {
         pessoa.moverVeiculoPara("BB-AA-99", 12,12)
     }
 
-    var pessoa3 = Pessoa("Nome da Pessoa 3", Util.dateFormat("27-3-2006"))
+    var pessoa3 = Pessoa("Nome da Pessoa 3", Util.dateFormat("27-3-2005"))
+    print(pessoa3.temCarta())
+    pessoa3.tirarCarta()
+    println("   ->    ${pessoa3.temCarta()}")
 
     pessoa2.venderVeiculo("BB-AA-99", pessoa3)
     pessoas.add(pessoa3)
 
+    println("$pessoa3, Tem Carta: ${pessoa3.temCarta()} exige carta: ${pessoa3.pesquisarVeiculo("BB-AA-99").requerCarta()}")
+
+    pessoa3.moverVeiculoPara("BB-AA-99", 100, 100)
+
 
     println("\n\n\n==================================================================\n")
     for (pessoa in pessoas){
-        println("Pessoa: $pessoa")
+        println("Pessoa: $pessoa, ${pessoa.age(pessoa.dataDeNascimento)}")
         for (veiculo in pessoa.veiculos){
             println(veiculo)
         }

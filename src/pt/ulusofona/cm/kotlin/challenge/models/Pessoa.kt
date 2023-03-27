@@ -83,6 +83,7 @@ class Pessoa : Movimentavel, DateFormat{
 
     fun tirarCarta(){
         if (!adulto()) throw MenorDeIdadeException("Menores não podem tirar a carta")
+        this.carta = Carta()
     }
 
     override fun moverPara(x: Int, y: Int) {
