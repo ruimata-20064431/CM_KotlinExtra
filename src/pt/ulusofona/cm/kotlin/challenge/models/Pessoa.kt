@@ -66,8 +66,10 @@ class Pessoa : Movimentavel, DateFormat{
 
     fun moverVeiculoPara(identificador: String, x: Int, y: Int){
         var veiculo = pesquisarVeiculo(identificador)
-        if (veiculo.requerCarta() && !temCarta())
+        if (veiculo.requerCarta() && !temCarta()) {
             throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
+        }
+        veiculo.moverPara(x, y)
         this.posicao.alterarPosicaoPara(x, y)
     }
 
