@@ -5,16 +5,16 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoLigadoException
 
 interface Ligavel {
 
-    var _ligado: Boolean
+    var ligado: Boolean
     fun ligar()        {
         if (estaLigado()) throw VeiculoLigadoException("O veiculo já se encontra ligado")
-        _ligado = true    }
+        ligado = true    }
 
     fun desligar(){
         if (!estaLigado()) throw VeiculoDesligadoException("O veiculo já se encontra desligado")
-        _ligado = false   }
+        ligado = false   }
 
     fun estaLigado(): Boolean {
-        return _ligado
+        return ligado
     }
 }

@@ -5,33 +5,32 @@ import java.util.*
 
 open class Veiculo: DateFormat {
 
-    protected var _identificador     : String
-    protected var _posicao           : Posicao
-    protected var _dataDeAquisicao   : Date
-    protected var _exigeCarta        : Boolean = true
+    protected var identificador     : String
+    protected var posicao           : Posicao
+    protected var dataDeAquisicao   : Date
+    protected var exigeCarta        : Boolean = true
 
     constructor (identificador: String    ){
-        _identificador = identificador
-        _posicao = Posicao(0, 0)
-        _dataDeAquisicao = currentDate()
-        // _exigeCarta  => true by default
+        this.identificador      = identificador
+        this.posicao            = Posicao(0, 0)
+        this.dataDeAquisicao    = currentDate()
     }
 
 
     fun requerCarta(): Boolean{
-        return _exigeCarta
+        return exigeCarta
     }
 
     fun movePara(x: Int, y: Int){
-        _posicao.alterarPosicaoPara(x, y)
+        posicao.alterarPosicaoPara(x, y)
     }
 
     fun registaAquisicao(data: Date){
-        this._dataDeAquisicao = data
+        this.dataDeAquisicao = data
     }
 
     fun lerIdentificador(): String{
-        return _identificador
+        return identificador
     }
 
 }

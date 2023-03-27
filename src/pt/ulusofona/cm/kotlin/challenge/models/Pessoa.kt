@@ -10,17 +10,17 @@ class Pessoa : DateFormat{
 
             var nome                : String private set
             var veiculos            : MutableList<Veiculo> private set
-    private var _dataDeNascimento   : Date
+    private var dataDeNascimento    : Date
             var carta               : Carta? private set
-    private var _posicao            : Posicao
+    private var posicao             : Posicao
 
     constructor(nome: String,
                 dataDeNascimento: Date){
         this.nome                   = nome
-        _dataDeNascimento           = dataDeNascimento
-        veiculos                    = mutableListOf<Veiculo>()
-        carta                       = null
-        _posicao                    = Posicao(0,0)
+        this.dataDeNascimento       = dataDeNascimento
+        this.veiculos               = mutableListOf<Veiculo>()
+        this.carta                  = null
+        this.posicao                = Posicao(0,0)
     }
     constructor(
         nome                        : String,
@@ -31,17 +31,17 @@ class Pessoa : DateFormat{
     ) {
         this.nome                   = nome
         this.veiculos               = veiculos
-        this._dataDeNascimento      = dataDeNascimento
-        this.carta                 = null
-        this._posicao               = posicao
+        this.dataDeNascimento       = dataDeNascimento
+        this.carta                  = null
+        this.posicao                = posicao
     }
 
     fun Pessoa (nome: String, dataDeNascimento: Date){
         this.nome                   = nome
-        this._dataDeNascimento      = dataDeNascimento
+        this.dataDeNascimento      = dataDeNascimento
         this.veiculos               = mutableListOf<Veiculo>()
         this.carta                 = Carta()
-        this._posicao               = Posicao(0, 0)
+        this.posicao               = Posicao(0, 0)
     }
 
     fun comprarVeiculo(veiculo: Veiculo){
@@ -69,11 +69,11 @@ class Pessoa : DateFormat{
             throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
 
         veiculo.movePara(x, y)
-        this._posicao.alterarPosicaoPara(x, y)
+        this.posicao.alterarPosicaoPara(x, y)
     }
 
     fun adulto(): Boolean{
-        return age(_dataDeNascimento) >= 18
+        return age(dataDeNascimento) >= 18
     }
 
     fun temCarta(): Boolean {
@@ -85,7 +85,7 @@ class Pessoa : DateFormat{
     }
 
     override fun toString(): String{
-        return "Pessoa | $nome | ${Util.dateToString(_dataDeNascimento)} | " +
-                "$_posicao"
+        return "Pessoa | $nome | ${Util.dateToString(dataDeNascimento)} | " +
+                "$posicao"
     }
 }

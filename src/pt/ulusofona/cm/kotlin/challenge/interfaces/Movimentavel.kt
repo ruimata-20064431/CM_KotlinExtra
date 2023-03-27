@@ -4,13 +4,13 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 
 interface Movimentavel {
 
-    var _x : Int
-    var _y : Int
+    var x : Int
+    var y : Int
     fun moverPara(x: Int, y: Int){
-        if (_x == x && _y == y) throw AlterarPosicaoException("Já se encontra nessa posição")
+        if (this.x == x && this.y == y) throw AlterarPosicaoException("Já se encontra nessa posição")
         else {
-            _x = x
-            _y = y
+            this.x = x
+            this.y = y
         }
     }
 }
