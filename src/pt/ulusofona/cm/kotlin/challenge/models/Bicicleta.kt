@@ -4,14 +4,10 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.AlterarPosicaoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Bicicleta : Veiculo, Movimentavel, DateFormat{
+class Bicicleta : Veiculo, DateFormat{
 
     constructor (identificador: String) : super(identificador){
         this.identificador = identificador
-    }
-
-    override fun moverPara(x: Int, y: Int) {
-        posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String{

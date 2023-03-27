@@ -4,7 +4,7 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
-open class Veiculo: DateFormat {
+open class Veiculo: Movimentavel, DateFormat {
 
     var identificador           : String
     var posicao                 : Posicao
@@ -29,6 +29,10 @@ open class Veiculo: DateFormat {
 
     fun lerIdentificador(): String{
         return identificador
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+        posicao.alterarPosicaoPara(x, y)
     }
 
 }
