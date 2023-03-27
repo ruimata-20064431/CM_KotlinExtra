@@ -72,7 +72,7 @@ class Pessoa : Movimentavel, DateFormat{
         if (veiculo.requerCarta() && !temCarta())
             throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
 
-        veiculo.movePara(x, y)
+        veiculo.moverPara(x, y)
         this.posicao.alterarPosicaoPara(x, y)
     }
 

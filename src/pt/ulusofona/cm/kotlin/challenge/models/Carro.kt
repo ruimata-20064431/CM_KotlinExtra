@@ -1,8 +1,9 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
-class Carro: Veiculo, Ligavel {
+class Carro: Veiculo, Movimentavel, Ligavel {
     private var motor          : Motor
     override var ligado         : Boolean = false
 
@@ -12,7 +13,6 @@ class Carro: Veiculo, Ligavel {
     }
 
     override fun toString(): String{
-        return "Carro | $identificador | $dataDeAquisicao | " +
-                "$dataDeAquisicao | $posicao"
+        return "Carro | $identificador | ${dateToString(dataDeAquisicao)} | $posicao"
     }
 }

@@ -12,13 +12,8 @@ open class Veiculo: Movimentavel, DateFormat {
     var exigeCarta              : Boolean = false
 
 
-    override var x: Int
-        get()  { return x }
-        set(a) { if (a == a) a else a } //...
-
-    override var y: Int
-        get() = y
-        set(a) { if (a == a) a else a } //...
+    override var x: Int = 0
+    override var y: Int = 0
 
     constructor (identificador: String    ){
         this.identificador      = identificador
@@ -29,10 +24,6 @@ open class Veiculo: Movimentavel, DateFormat {
 
     fun requerCarta(): Boolean{
         return exigeCarta
-    }
-
-    fun movePara(x: Int, y: Int){
-        posicao.alterarPosicaoPara(x, y)
     }
 
     fun registaAquisicao(data: Date){
