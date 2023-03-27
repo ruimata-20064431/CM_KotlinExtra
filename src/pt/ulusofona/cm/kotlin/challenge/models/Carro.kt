@@ -9,10 +9,20 @@ class Carro: Veiculo, Ligavel {
 
     constructor(identificador: String, motor: Motor) : super(identificador){
         this.motor = motor
-        exigeCarta = true
+        //exigeCarta = true
     }
 
     override fun toString(): String{
         return "Carro | $identificador | ${dateToString(dataDeAquisicao)} | $posicao"
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+        super.moverPara(x, y)
+
+        if (estaLigado()) ligado = false
+    }
+
+    override fun requerCarta(): Boolean{
+        return true
     }
 }

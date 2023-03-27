@@ -13,4 +13,8 @@ class Bicicleta : Veiculo, DateFormat{
     override fun toString(): String{
         return "Bicicleta | $identificador | ${dateToString(dataDeAquisicao)} | $posicao"
     }
+
+    override fun requerCarta(): Boolean{
+        return false
+    }
 }

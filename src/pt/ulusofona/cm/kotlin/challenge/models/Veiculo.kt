@@ -4,12 +4,12 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
-open class Veiculo: Movimentavel, DateFormat {
+abstract class Veiculo: Movimentavel, DateFormat {
 
     var identificador           : String
     var posicao                 : Posicao
     var dataDeAquisicao         : Date
-    var exigeCarta              : Boolean = false
+    //var exigeCarta              : Boolean = false
 
 
     constructor (identificador: String    ){
@@ -19,9 +19,7 @@ open class Veiculo: Movimentavel, DateFormat {
     }
 
 
-    fun requerCarta(): Boolean{
-        return exigeCarta
-    }
+    abstract fun requerCarta(): Boolean
 
     fun registaAquisicao(data: Date){
         this.dataDeAquisicao = data

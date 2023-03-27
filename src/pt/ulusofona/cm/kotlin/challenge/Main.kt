@@ -20,7 +20,7 @@ fun main() {
         pessoa.veiculos.forEach { println(it) }
         pessoa.carta = Carta()
         if (pessoa.temCarta()) println("Tem carta? : ${pessoa.carta}")
-        println("Exige carta? : ${pessoa.veiculos[1].exigeCarta}")
+        println("Exige carta? : ${pessoa.veiculos[1].requerCarta()}")
         println("Tem carta?: ${pessoa.temCarta()} || ${pessoa.carta}")
 
 
