@@ -5,10 +5,10 @@ import java.util.*
 
 open class Veiculo: DateFormat {
 
-    protected var identificador     : String
-    protected var posicao           : Posicao
-    protected var dataDeAquisicao   : Date
-    protected var exigeCarta        : Boolean = true
+    var identificador           : String
+    var posicao                 : Posicao
+    var dataDeAquisicao         : Date
+    var exigeCarta              : Boolean = true
 
     constructor (identificador: String    ){
         this.identificador      = identificador
