@@ -8,11 +8,11 @@ import java.util.*
 
 class Pessoa : DateFormat{
 
-            var nome                : String private set
-            var veiculos            : MutableList<Veiculo> private set
-    private var dataDeNascimento    : Date
-            var carta               : Carta? private set
-    private var posicao             : Posicao
+    var nome                : String private set
+    var veiculos            : MutableList<Veiculo> private set
+    var dataDeNascimento    : Date
+    var carta               : Carta? private set
+    var posicao             : Posicao
 
     constructor(nome: String,
                 dataDeNascimento: Date){
@@ -63,7 +63,7 @@ class Pessoa : DateFormat{
         comprador.comprarVeiculo(veiculo)
     }
 
-    fun moverVeiculo(identificador: String, x: Int, y: Int){
+    fun moverVeiculoPara(identificador: String, x: Int, y: Int){
         var veiculo = pesquisarVeiculo(identificador)
         if (veiculo.requerCarta() && !temCarta())
             throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")

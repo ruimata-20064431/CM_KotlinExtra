@@ -2,8 +2,8 @@ package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 
 class Motor (
-    private var cavalos    : Int,
-    private var cilindrada : Int,
+    var cavalos    : Int,
+    var cilindrada : Int,
     ): Ligavel {
 
     override var ligado : Boolean
