@@ -48,8 +48,8 @@ class Pessoa : Movimentavel, DateFormat{
     }
 
     fun comprarVeiculo(veiculo: Veiculo){
-        veiculo.registaAquisicao(currentDate())
         veiculos.add(veiculo)
+        veiculo.registaAquisicao()
     }
 
     fun pesquisarVeiculo(identificador: String) : Veiculo {

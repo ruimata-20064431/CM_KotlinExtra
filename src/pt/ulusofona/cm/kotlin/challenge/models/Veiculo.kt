@@ -15,14 +15,14 @@ abstract class Veiculo: Movimentavel, DateFormat {
     constructor (identificador: String    ){
         this.identificador      = identificador
         this.posicao            = Posicao(0, 0)
-        this.dataDeAquisicao    = currentDate()
+        this.dataDeAquisicao    = Util.currentDate()
     }
 
 
     abstract fun requerCarta(): Boolean
 
-    fun registaAquisicao(data: Date){
-        this.dataDeAquisicao = data
+    fun registaAquisicao(){
+        this.dataDeAquisicao = Util.currentDate()
     }
 
     fun lerIdentificador(): String{

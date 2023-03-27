@@ -13,7 +13,7 @@ fun main() {
     pessoas.add(pessoa1)
     pessoas.add(pessoa2)
 
-
+    /*
     // output data
     for (pessoa in pessoas) {
         println("\n\n===========================\n$pessoa")
@@ -62,4 +62,28 @@ fun main() {
 
     println("Current date is: ${Util.dateToString(Util.currentDate())}")
     println("Este tem ${Util.dateDiffYears(Util.dateFormat("05-12-2006"), Util.dateFormat("06-01-2016"))}")
+    */
+
+    for (i in 0..99){
+        pessoa1.comprarVeiculo(Carro("BB-AA-$i", Motor(135, 1900)))
+    }
+
+    for (veiculo in pessoa1.veiculos){
+        println(veiculo)
+    }
+
+    var v = pessoa1.pesquisarVeiculo("BB-AA-55")
+    println("\n" + v)
+
+    pessoa1.venderVeiculo("BB-AA-73", pessoa2)
+
+    var vv = pessoa2.pesquisarVeiculo("BB-AA-73")
+    println("\n" + vv)
+
+    for (veiculo in pessoa1.veiculos){
+        println(veiculo)
+    }
+
+    pessoa1.pesquisarVeiculo("BB-AA-73")
+
 }
