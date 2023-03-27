@@ -35,6 +35,6 @@ class Motor (
     //fun estaLigado(): Boolean   { return ligado }
 
     override fun toString (): String{
-        return "Motor | $cavalos | $cilindrada | $ligado"
+        return "Motor | $cavalos | $cilindrada"
     }
 }

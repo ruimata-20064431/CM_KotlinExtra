@@ -1,14 +1,13 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
-import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 
 class Carro: Veiculo, Ligavel {
-    private var _motor          : Motor
+    private var motor          : Motor
     override var ligado         : Boolean = false
 
-    constructor(_identificador: String, motor: Motor) : super(_identificador){
-        _motor = motor
+    constructor(identificador: String, motor: Motor) : super(identificador){
+        this.motor = motor
         exigeCarta = true
     }
 

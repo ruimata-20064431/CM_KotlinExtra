@@ -4,15 +4,19 @@ import pt.ulusofona.cm.kotlin.challenge.exceptions.MenorDeIdadeException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.PessoaSemCartaException
 import pt.ulusofona.cm.kotlin.challenge.exceptions.VeiculoNaoEncontradoException
 import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
+import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
-class Pessoa : DateFormat{
+class Pessoa : Movimentavel, DateFormat{
 
     var nome                : String private set
     var veiculos            : MutableList<Veiculo> private set
     var dataDeNascimento    : Date
     var carta               : Carta? private set
     var posicao             : Posicao
+
+    override var x: Int = 0
+    override var y: Int = 0
 
     constructor(nome: String,
                 dataDeNascimento: Date){

@@ -18,4 +18,5 @@ interface Ligavel {
     fun estaLigado(): Boolean {
         return ligado
     }
+    
 }
