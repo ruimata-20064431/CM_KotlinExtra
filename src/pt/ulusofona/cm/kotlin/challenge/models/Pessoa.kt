@@ -10,7 +10,7 @@ import java.util.*
 class Pessoa : Movimentavel, DateFormat{
 
     var nome                : String private set
-    var veiculos            : MutableList<Veiculo> private set
+    var veiculos            : MutableList<Veiculo> //private set
     var dataDeNascimento    : Date
     var carta               : Carta? //private set
     var posicao             : Posicao
@@ -23,6 +23,8 @@ class Pessoa : Movimentavel, DateFormat{
         this.carta                  = null
         this.posicao                = Posicao(0,0)
     }
+
+    /*
     constructor(
         nome                        : String,
         veiculos                    : MutableList<Veiculo>,
@@ -35,7 +37,7 @@ class Pessoa : Movimentavel, DateFormat{
         this.dataDeNascimento       = dataDeNascimento
         this.carta                  = null
         this.posicao                = posicao
-    }
+    }*/
 
     fun Pessoa (nome: String, dataDeNascimento: Date){
         this.nome                   = nome

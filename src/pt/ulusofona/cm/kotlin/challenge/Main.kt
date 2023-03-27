@@ -37,8 +37,14 @@ fun main() {
     pessoa3.tirarCarta()
     println("   ->    ${pessoa3.temCarta()}")
 
+    pessoa2.pesquisarVeiculo("BB-AA-99").dataDeAquisicao = Util.dateFormat("31-12-2021")
+
+    println(">>>>>>>>>>>>>>>>>>    ${pessoa2.pesquisarVeiculo("BB-AA-99")}")
+
     pessoa2.venderVeiculo("BB-AA-99", pessoa3)
     pessoas.add(pessoa3)
+
+    println(">>>>>>>>>>>>>>>>>>    ${pessoa3.pesquisarVeiculo("BB-AA-99")}")
 
     println("$pessoa3, Tem Carta: ${pessoa3.temCarta()} exige carta: ${pessoa3.pesquisarVeiculo("BB-AA-99").requerCarta()}")
 
