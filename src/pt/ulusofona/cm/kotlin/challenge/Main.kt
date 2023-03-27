@@ -18,10 +18,12 @@ fun main() {
 
         pessoa.comprarVeiculo(Carro("BB-AA-99", Motor(135, 1900)))
         pessoa.veiculos.forEach { println(it) }
+        pessoa.carta = Carta()
         if (pessoa.temCarta()) println("Tem carta? : $pessoa.carta")
         pessoa.moverVeiculoPara("BB-AA-99", 1,1)
         println("Exige carta? : ${pessoa.veiculos[1].exigeCarta}")
         println("Tem carta?: ${pessoa.temCarta()} || ${pessoa.carta}")
+
 
     }
 

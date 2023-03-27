@@ -12,7 +12,7 @@ class Pessoa : Movimentavel, DateFormat{
     var nome                : String private set
     var veiculos            : MutableList<Veiculo> private set
     var dataDeNascimento    : Date
-    var carta               : Carta? private set
+    var carta               : Carta? //private set
     var posicao             : Posicao
 
     override var x: Int = 0
