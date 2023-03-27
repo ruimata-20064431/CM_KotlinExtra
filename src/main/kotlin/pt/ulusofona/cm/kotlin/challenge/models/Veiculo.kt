@@ -1,13 +1,22 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 
+import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
 import java.util.*
 
-class Veiculo (
-    private var _identificador      : String    ) {
+open class Veiculo: DateFormat {
 
-    private var _posicao            : Posicao = Posicao(-1, -1)
-    private var _dataDeAquisicao    : Date      = Date("01/01/1900")
-    private var _exigeCarta         : Boolean   = true
+    protected var _identificador     : String
+    protected var _posicao           : Posicao
+    protected var _dataDeAquisicao   : Date
+    protected var _exigeCarta        : Boolean = true
+
+    constructor (identificador: String    ){
+        _identificador = identificador
+        _posicao = Posicao(0, 0)
+        _dataDeAquisicao = currentDate()
+        // _exigeCarta  => true by default
+    }
+
 
     fun requerCarta(): Boolean{
         return _exigeCarta
@@ -21,7 +30,8 @@ class Veiculo (
         this._dataDeAquisicao = data
     }
 
-    override fun toString(): String{
-        return "Veiculo | $_identificador | $_posicao | $_dataDeAquisicao"
+    fun lerIdentificador(): String{
+        return _identificador
     }
+
 }
