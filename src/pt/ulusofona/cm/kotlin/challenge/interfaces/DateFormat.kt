@@ -33,7 +33,7 @@ interface DateFormat {
         val toMonth = toSt.subSequence(3..4).toString().toInt()
         val toDay = toSt.subSequence(0..1).toString().toInt()
 
-        return toYear - fromYear - (if (fromMonth>= toMonth && fromDay >= toDay) 1 else 0)
+        return toYear - fromYear - (if (toMonth >= fromMonth && toDay >= fromDay) 0 else 1)
     }
 
     fun age ( date : Date): Int{

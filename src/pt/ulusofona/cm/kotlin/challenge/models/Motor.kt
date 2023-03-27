@@ -1,6 +1,7 @@
 package pt.ulusofona.cm.kotlin.challenge.models
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Ligavel
 
+/*
 class Motor (
     var cavalos    : Int,
     var cilindrada : Int,
@@ -15,6 +16,22 @@ class Motor (
         get(){ return estaLigado()}
 
     fun ligado(): Boolean   { return estaLigado() }
+
+    override fun toString (): String{
+        return "Motor | $cavalos | $cilindrada | $ligado"
+    }
+}
+
+ */
+
+class Motor (
+    var cavalos     : Int,
+    var cilindrada  : Int,
+    var ligado      : Boolean
+) {
+
+
+    fun estaLigado(): Boolean   { return ligado }
 
     override fun toString (): String{
         return "Motor | $cavalos | $cilindrada | $ligado"
