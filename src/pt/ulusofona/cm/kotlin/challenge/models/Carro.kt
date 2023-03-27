@@ -12,6 +12,10 @@ class Carro: Veiculo, Movimentavel, Ligavel {
         exigeCarta = true
     }
 
+    override fun moverPara(x: Int, y: Int) {
+        posicao.alterarPosicaoPara(x, y)
+    }
+
     override fun toString(): String{
         return "Carro | $identificador | ${dateToString(dataDeAquisicao)} | $posicao"
     }

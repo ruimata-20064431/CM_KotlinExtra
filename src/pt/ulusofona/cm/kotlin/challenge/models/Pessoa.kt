@@ -15,9 +15,6 @@ class Pessoa : Movimentavel, DateFormat{
     var carta               : Carta? //private set
     var posicao             : Posicao
 
-    override var x: Int = 0
-    override var y: Int = 0
-
     constructor(nome: String,
                 dataDeNascimento: Date){
         this.nome                   = nome
@@ -71,8 +68,6 @@ class Pessoa : Movimentavel, DateFormat{
         var veiculo = pesquisarVeiculo(identificador)
         if (veiculo.requerCarta() && !temCarta())
             throw PessoaSemCartaException("$nome não tem carta para conduzir o veículo indicado")
-
-        veiculo.moverPara(x, y)
         this.posicao.alterarPosicaoPara(x, y)
     }
 
@@ -86,6 +81,10 @@ class Pessoa : Movimentavel, DateFormat{
 
     fun tirarCarta(){
         if (!adulto()) throw MenorDeIdadeException("Menores não podem tirar a carta")
+    }
+
+    override fun moverPara(x: Int, y: Int) {
+        posicao.alterarPosicaoPara(x, y)
     }
 
     override fun toString(): String{

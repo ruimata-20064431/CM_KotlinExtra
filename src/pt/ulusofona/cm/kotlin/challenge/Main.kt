@@ -14,7 +14,7 @@ fun main() {
         println(pessoa)
         pessoa.comprarVeiculo(Bicicleta("AA-BB-01"))
         if (pessoa.temCarta()) println("Tem carta? : $pessoa.carta")
-        pessoa.veiculos[0].moverPara(1, 1)
+        pessoa.moverVeiculoPara("AA-BB-01", 1,1)
 
         pessoa.comprarVeiculo(Carro("BB-AA-99", Motor(135, 1900)))
         pessoa.veiculos.forEach { println(it) }

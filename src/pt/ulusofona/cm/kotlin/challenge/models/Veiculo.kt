@@ -4,16 +4,13 @@ import pt.ulusofona.cm.kotlin.challenge.interfaces.DateFormat
 import pt.ulusofona.cm.kotlin.challenge.interfaces.Movimentavel
 import java.util.*
 
-open class Veiculo: Movimentavel, DateFormat {
+open class Veiculo: DateFormat {
 
     var identificador           : String
     var posicao                 : Posicao
     var dataDeAquisicao         : Date
     var exigeCarta              : Boolean = false
 
-
-    override var x: Int = 0
-    override var y: Int = 0
 
     constructor (identificador: String    ){
         this.identificador      = identificador
