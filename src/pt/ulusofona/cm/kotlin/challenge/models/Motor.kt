@@ -26,9 +26,10 @@ class Motor (
 
 class Motor (
     var cavalos     : Int,
-    var cilindrada  : Int,
-    var ligado      : Boolean
+    var cilindrada  : Int
 ) {
+
+    var ligado      : Boolean = false
 
 
     fun estaLigado(): Boolean   { return ligado }
