@@ -5,7 +5,7 @@ import java.time.LocalDateTime
 import java.util.*
 
 interface DateFormat {
-    fun dateFormat(dateText: String, pattern : String = "dd-mm-yyyy"): Date {
+    fun dateFormat(dateText: String, pattern : String = "dd-MM-yyyy"): Date {
         val formatter = SimpleDateFormat(pattern)
         return formatter.parse(dateText)
     }
@@ -13,10 +13,10 @@ interface DateFormat {
     fun currentDate() : Date {
         return dateFormat(  LocalDateTime.now().toString()
                             .subSequence(0..9).toString(),
-                            "yyyy-mm-dd")
+                            "yyyy-MM-dd")
     }
 
-    fun dateToString(date: Date, pattern: String = "dd-mm-yyyy"): String{
+    fun dateToString(date: Date, pattern: String = "dd-MM-yyyy"): String{
         val format = SimpleDateFormat(pattern)
         return format.format(date)
     }
